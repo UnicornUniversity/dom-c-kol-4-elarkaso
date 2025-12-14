@@ -6,8 +6,7 @@ const YEAR_MS = 365.25 * 24 * 60 * 60 * 1000;
  * @param {object} dtoIn contains count of employees, age limit of employees {min, max}
  * @returns {object} containing the statistics
  */
-function main(dtoIn) {
-
+export function main(dtoIn) {
   getEmployeeStatistics(generateEmployeeData(dtoIn));
   
 }
