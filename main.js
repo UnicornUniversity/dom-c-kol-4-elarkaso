@@ -95,7 +95,7 @@ export function main(dtoIn) {
   }
 
   // funkce pro výpočet statistik
- export function getEmployeeStatistics(employees) {
+export function getEmployeeStatistics(employees) {
 
     // pomocná funkce: ISO date -> věk v letech (desetinné)
     function getAgeFromBirthdate(isoBirthdate) {
@@ -153,7 +153,8 @@ export function main(dtoIn) {
     const maxAge = Math.floor(maxAgeUnfloored);
 
     // 7) medián věku
-    const medianAge = median(ages);
+    const medianAgeUnfloored = median(ages);
+    const medianAge = Math.floor(medianAgeUnfloored);
 
     // 8) medián workloadu
     const medianWorkload = median(workloads);
@@ -166,7 +167,7 @@ export function main(dtoIn) {
     const employeesSortedByWorkload = employees.slice().sort((a, b) => a.workload - b.workload);
 
     // výsledný dtoOut objekt se statistikami
-    return {
+    const dtoOut = {
       total: employeeCount,
       workload10: employeeCountByWorkload[10],
       workload20: employeeCountByWorkload[20],
@@ -180,4 +181,6 @@ export function main(dtoIn) {
       averageWomenWorkload: averageWomenWorkload,
       sortedByWorkload: employeesSortedByWorkload
     };
-	}
+
+  return dtoOut;
+}
