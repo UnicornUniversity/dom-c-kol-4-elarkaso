@@ -11,7 +11,7 @@ export function main(dtoIn) {
   
 }
 // původní main převedený na funkci
-  function generateEmployeeData(dtoIn) {
+ export function generateEmployeeData(dtoIn) {
     // pole náhodných českých jmen mužů
     const maleNames = [
       "Jan", "Petr", "Josef", "Tomáš", "Martin", "Jiří", "Ondřej", "David", "Lukáš",
@@ -95,7 +95,7 @@ export function main(dtoIn) {
   }
 
   // funkce pro výpočet statistik
-  function getEmployeeStatistics(employees) {
+ export function getEmployeeStatistics(employees) {
 
     // pomocná funkce: ISO date -> věk v letech (desetinné)
     function getAgeFromBirthdate(isoBirthdate) {
