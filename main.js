@@ -143,7 +143,7 @@ export function main(dtoIn) {
 
     // 5) průměrný věk (1 desetinné místo)
     const averageAgeRaw = ages.reduce((sum, a) => sum + a, 0) / ages.length;
-    const averageAge = Math.round(averageAgeRaw * 10) / 10;
+    let averageAge = Math.round(averageAgeRaw * 10) / 10;
     averageAge = Number(averageAge.toFixed(1)); //zaokrouhlit na 1 desetinne misto
 
     // 6) min/max věk
