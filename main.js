@@ -167,7 +167,7 @@ export function main(dtoIn) {
 
     // výsledný dtoOut objekt se statistikami
     return {
-      employeeCount: employeeCount,
+      total: employeeCount,
       workload10: employeeCountByWorkload[10],
       workload20: employeeCountByWorkload[20],
       workload30: employeeCountByWorkload[30],
