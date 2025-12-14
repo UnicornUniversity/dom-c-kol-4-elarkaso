@@ -144,7 +144,7 @@ export function main(dtoIn) {
     // 5) průměrný věk (1 desetinné místo)
     const averageAgeRaw = ages.reduce((sum, a) => sum + a, 0) / ages.length;
     const averageAge = Math.round(averageAgeRaw * 10) / 10;
-    averageAge.toFixed(1); //zaokrouhlit na 1 desetinne misto
+    averageAge = Number(averageAge.toFixed(1)); //zaokrouhlit na 1 desetinne misto
 
     // 6) min/max věk
     const minAgeUnfloored = Math.min(...ages); // nejmladší
@@ -167,14 +167,17 @@ export function main(dtoIn) {
 
     // výsledný dtoOut objekt se statistikami
     return {
-      employeeCount,
-      employeeCountByWorkload,
-      averageAge,
-      minAge,
-      maxAge,
-      medianAge,
-      medianWorkload,
-      averageWomenWorkload,
-      employeesSortedByWorkload
+      employeeCount: employeeCount,
+      workload10: employeeCountByWorkload[10],
+      workload20: employeeCountByWorkload[20],
+      workload30: employeeCountByWorkload[30],
+      workload40: employeeCountByWorkload[40],
+      averageAge: averageAge,
+      minAge: minAge,
+      maxAge: maxAge,
+      medianAge: medianAge,
+      medianWorkload: medianWorkload,
+      averageWomenWorkload: averageWomenWorkload,
+      sortedByWorkload: employeesSortedByWorkload
     };
 	}
