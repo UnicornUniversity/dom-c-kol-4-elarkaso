@@ -7,7 +7,7 @@ const YEAR_MS = 365.25 * 24 * 60 * 60 * 1000;
  * @returns {object} containing the statistics
  */
 export function main(dtoIn) {
-  getEmployeeStatistics(generateEmployeeData(dtoIn));
+  return getEmployeeStatistics(generateEmployeeData(dtoIn));
   
 }
 // původní main převedený na funkci
